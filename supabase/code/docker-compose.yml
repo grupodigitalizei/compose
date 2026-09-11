@@ -558,8 +558,8 @@ services:
 
 volumes:
   db-config-v2:
-  networks:
+
+networks:
   easypanel:
     external: true
-  deno-cache:
   
