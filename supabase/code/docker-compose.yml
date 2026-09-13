@@ -453,6 +453,9 @@ services:
       SUPABASE_DB_URL: postgresql://postgres:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
       # TODO: Allow configuring VERIFY_JWT per function.
       VERIFY_JWT: "${FUNCTIONS_VERIFY_JWT}"
+      # O segredo da porta de ingestao do Zapier. Precisa estar NESTA lista:
+      # o bloco `environment:` e explicito, e o que nao esta nele nao atravessa.
+      INGEST_SECRET: ${INGEST_SECRET}
     command: [ "start", "--main-service", "/home/deno/functions/main" ]
 
   # Comment out everything below this point if you are using an external Postgres database
